@@ -1,0 +1,32 @@
+# .gitignore
+
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual/Conda environment
+/env/
+
+# IDE files
+.vscode/
+
+# Compiled files
+*.pyc
+*.pyo
+
+# Dependency directories
+venv/
+env/
+
+# Editor and OS-specific files
+.DS_Store
+Thumbs.db
+
+# For Testing
+server.py
+
+# Local env
+.env
+
