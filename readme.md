@@ -1,6 +1,6 @@
-# gguf-py-backend
+# GGUF-PY-AGENT
 
-Python backend that I quickly whipped up to tests some GGUF AI model supported by llama.ccp
+Python server for GGUF model-based assistance that I quickly whipped up to test/implement some models supported by llama.ccp.
 
 <br>
 
@@ -43,6 +43,12 @@ For a detailed installation guide with reference information, you can follow the
 
 <br>
 
+3. **Install Packages:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+<br>
+
 ## ENV
 **Create .env file.** \
 Make sure to replace *{Your model path}* with the actual path and model you want to use.
@@ -52,6 +58,10 @@ N_GPU_LAYERS=-1
 N_CTX=2048
 N_BATCH=32
 PORT=8083
+APP_URL=localhost
+AGENT_PROMPT=You are a professional assistance.
+PREDEFINED_MESSAGES_FORMATTER_TYPE=CHATML
+DEBUG_OUTPUT=True
 ```
 <br>
 
@@ -66,5 +76,5 @@ python app.py
 ```bash
 curl --location 'http://127.0.0.1:8083/generate' \
 --header 'Content-Type: application/json' \
---data '{"input_text": "Q: What is the difference between an accident and a coincidence. A: ", "max_tokens": 72}'
+--data '{"input_text": "Hey, what can you do?", "max_tokens": 72}'
 ```

@@ -1,10 +1,6 @@
-# tests/test_llama_app.py
-import sys
-sys.path.append('E:\\Textgen\\llama-backend')  # Replace with the actual path to your project's root directory
-
 import unittest
 from flask import json
-from src.app import app
+from ..app import app  # Relative import
 
 class TestLlamaApp(unittest.TestCase):
     def setUp(self):
@@ -19,8 +15,10 @@ class TestLlamaApp(unittest.TestCase):
 
         response = self.app.post('/generate', json=input_data)
 
-        data = json.loads(response.get_data(as_text=True))
+        self.assertEqual(response.status_code, 200)
+        data = response.get_json()
         self.assertIn('output', data)
+        self.assertIsInstance(data['output'], str)
 
 if __name__ == '__main__':
     unittest.main()
