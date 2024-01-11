@@ -1,6 +1,6 @@
 # GGUF-PY-AGENT
 
-Python server for GGUF model-based assistance that I quickly whipped up to test/implement some models supported by llama.ccp.
+Python server for GGUF model-based assistance that I quickly whipped up to test/implement some models supported by llama.cpp.
 
 <br>
 
